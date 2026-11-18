@@ -1,0 +1,444 @@
+/* benefits.css - Ornate Merged Container Layout */
+
+.benefits-section {
+    padding: 10px 20px 40px 20px;
+    background: #fbf6ec;
+    background: radial-gradient(circle at center, #fcfaf4 0%, #f6ecd8 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Styling */
+.benefits-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.benefits-header-top-ornament,
+.benefits-header-bottom-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px auto;
+    max-width: 320px;
+}
+
+.benefits-header-bottom-ornament {
+    max-width: 250px;
+    margin-top: 15px;
+}
+
+.ornament-line {
+    flex: 1;
+    height: 1.5px;
+    background: #cca158;
+}
+
+.ornament-diamond {
+    width: 6px;
+    height: 6px;
+    background: #cca158;
+    transform: rotate(45deg);
+}
+
+.benefits-header-top-icon {
+    width: 45px;
+    height: 30px;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+.benefits-header-bottom-icon {
+    width: 30px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefits-header-top-icon svg,
+.benefits-header-bottom-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.benefits-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3.8rem;
+    color: #631515;
+    /* Darker maroon from image */
+    margin: 10px 0;
+    letter-spacing: 4px;
+    font-weight: 800;
+    text-shadow: 1px 1px 0px rgba(204, 161, 88, 0.3);
+}
+
+.benefits-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.15rem;
+    color: #143d59;
+    /* Dark Slate Blue from image */
+    margin: 0 0 15px 0;
+    font-weight: 500;
+}
+
+/* The Ornate Grid Container */
+.benefits-wrapper {
+    position: relative;
+    padding: 0 15px;
+    /* space for outer corner flares */
+}
+
+.benefits-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background: transparent;
+    border-top: 1.5px solid #cca158;
+    border-left: 1.5px solid #cca158;
+    border-right: 1.5px solid #cca158;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Outer corner accents */
+.benefits-grid::before,
+.benefits-grid::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 70px;
+    border: 1.5px solid #cca158;
+    background: #fdfaf3;
+    z-index: -1;
+}
+
+.benefits-grid::before {
+    left: -10px;
+    border-right: none;
+    border-radius: 40px 0 0 40px;
+}
+
+.benefits-grid::after {
+    right: -10px;
+    border-left: none;
+    border-radius: 0 40px 40px 0;
+}
+
+/* Individual Benefit Item */
+.benefit-item {
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 35px 15px 40px 15px;
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #fefcf8 100%);
+    border-right: 1px solid rgba(204, 161, 88, 0.4);
+
+    /* The Scalloped Bottom */
+    border-bottom: 2px solid #cca158;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.benefit-item:first-child {
+    border-top-left-radius: 30px;
+}
+
+.benefit-item:last-child {
+    border-right: none;
+    border-top-right-radius: 30px;
+}
+
+.benefit-item:hover {
+    background: #ffffff;
+    box-shadow: 0 5px 25px rgba(204, 161, 88, 0.15);
+    z-index: 2;
+}
+
+/* Diamond at intersections */
+.benefit-divider-top {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 9px;
+    height: 9px;
+    background: #cca158;
+    transform: rotate(45deg);
+    z-index: 3;
+}
+
+.benefit-divider-bottom {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 9px;
+    height: 9px;
+    background: #cca158;
+    transform: rotate(45deg);
+    z-index: 3;
+}
+
+/* Small lotus at bottom of scallop */
+.benefit-lotus {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.benefit-lotus svg {
+    width: 14px;
+    height: 14px;
+    fill: #cca158;
+}
+
+/* Icon Bubble */
+.benefit-icon-wrapper {
+    position: relative;
+    width: 110px;
+    height: 120px;
+    margin: 0 auto 15px auto;
+}
+
+.benefit-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid transparent;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #f1db9e, #b8860b);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    padding: 3px;
+    box-shadow: 0 5px 20px rgba(204, 161, 88, 0.3);
+    position: relative;
+    margin: 0 auto;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.benefit-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.benefit-item:hover .benefit-circle {
+    box-shadow: 0 8px 25px rgba(204, 161, 88, 0.5);
+    transform: scale(1.05);
+}
+
+/* Numbered Badge */
+.benefit-badge {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    background: #ffffff;
+    border-radius: 50%;
+    border: 1.5px solid #cca158;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5d1c1c;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 900;
+    z-index: 3;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+.benefit-title-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: #7b2929;
+    /* Deep Red/Maroon */
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.benefit-desc-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    color: #444;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 140px;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .benefits-title {
+        font-size: 2.5rem;
+    }
+
+    .benefits-grid {
+        flex-wrap: wrap;
+        border-radius: 30px;
+        border-bottom: none;
+        box-shadow: none;
+    }
+
+    /* Reset all to flat middle items */
+    .benefit-item {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 1px solid rgba(204, 161, 88, 0.4);
+        border-right: 1px solid rgba(204, 161, 88, 0.4);
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .benefit-item:first-child {
+        border-top-left-radius: 30px;
+    }
+
+    .benefit-lotus {
+        display: none;
+    }
+}
+
+/* Tablet Layout (3 per row) */
+@media (max-width: 1200px) and (min-width: 768px) {
+    .benefit-item {
+        flex: 0 0 33.333%;
+    }
+
+    /* Row 1 right corner */
+    .benefit-item:nth-child(3) {
+        border-right: none;
+        border-top-right-radius: 30px;
+    }
+
+    /* Bottom row */
+    .benefit-item:nth-child(4),
+    .benefit-item:nth-child(5),
+    .benefit-item:nth-child(6) {
+        border-bottom: 2px solid #cca158;
+        border-bottom-left-radius: 60px;
+        border-bottom-right-radius: 60px;
+    }
+
+    .benefit-item:nth-child(6) {
+        border-right: none;
+    }
+
+    /* Show lotus on bottom row */
+    .benefit-item:nth-child(4) .benefit-lotus,
+    .benefit-item:nth-child(5) .benefit-lotus,
+    .benefit-item:nth-child(6) .benefit-lotus {
+        display: flex;
+    }
+}
+
+/* Mobile Layout (2 per row) */
+@media (max-width: 767px) {
+    .benefit-item {
+        flex: 0 0 50%;
+    }
+
+    /* Row 1 */
+    .benefit-item:nth-child(2) {
+        border-right: none;
+        border-top-right-radius: 30px;
+    }
+
+    /* Row 2 */
+    .benefit-item:nth-child(4) {
+        border-right: none;
+    }
+
+    /* Row 3 */
+    .benefit-item:nth-child(5),
+    .benefit-item:nth-child(6) {
+        border-bottom: 2px solid #cca158;
+        border-bottom-left-radius: 60px;
+        border-bottom-right-radius: 60px;
+    }
+
+    .benefit-item:nth-child(6) {
+        border-right: none;
+    }
+
+    .benefit-item:nth-child(5) .benefit-lotus,
+    .benefit-item:nth-child(6) .benefit-lotus {
+        display: flex;
+    }
+
+    .benefits-grid::before,
+    .benefits-grid::after {
+        display: none;
+    }
+
+    .benefit-divider-top,
+    .benefit-divider-bottom {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit-item {
+        padding: 25px 5px 30px 5px;
+    }
+
+    .benefit-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .benefit-icon-wrapper {
+        width: 90px;
+        height: 100px;
+    }
+
+    .benefit-title-text {
+        font-size: 0.8rem;
+    }
+
+    .benefit-desc-text {
+        font-size: 0.7rem;
+    }
+}

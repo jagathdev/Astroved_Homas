@@ -1,0 +1,321 @@
+/* process.css - Our Process Section */
+
+.process-section {
+    padding: 40px 20px 20px 20px; /* Increased top padding to prevent clipping */
+    background: #ffffff; /* Crisp white background */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional Background Decor (simulating the mandalas/temple) */
+.process-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(204,161,88,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+.process-section::after {
+    content: '';
+    position: absolute;
+    bottom: -10%; right: -5%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(204,161,88,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.process-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.process-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.process-header-icon {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #cca158;
+}
+.process-header-icon svg {
+    width: 50px; height: 35px;
+    fill: none; stroke: currentColor; stroke-width: 1.5;
+}
+
+.process-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: #4a1c11; /* Deep dark brown/red */
+    margin: 0 0 5px 0;
+    letter-spacing: 2px;
+}
+
+.process-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0 0 15px 0;
+    font-weight: 500;
+}
+
+.process-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cca158;
+}
+.process-ornament svg {
+    width: 120px; height: 15px;
+    fill: none; stroke: currentColor; stroke-width: 1.5;
+}
+
+/* Flex Grid for Steps */
+.process-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 0;
+    gap: 10px;
+}
+
+/* Individual Step */
+.process-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 5px;
+    position: relative;
+}
+
+/* Arrow Separator */
+.process-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    color: #cca158;
+    margin-top: 50px; /* Aligned with center of the 100px images */
+    font-size: 10px; /* FontAwesome chevron size */
+    flex-shrink: 0;
+    z-index: 2;
+}
+.process-arrow svg {
+    width: 12px; height: 12px;
+    fill: none; stroke: currentColor; stroke-width: 2;
+}
+
+/* Card Layout */
+.process-card {
+    background: #fbf6ec; /* Faint cream/beige background */
+    border-radius: 20px;
+    padding: 0 15px 30px 15px;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px; /* Make room for the overlapping image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover .process-card {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(204,161,88,0.1);
+}
+
+/* Image Wrapper */
+.process-image-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px; /* Overlap halfway over the top edge of the card */
+    margin-bottom: 25px;
+    border-radius: 50%;
+    border: 3px solid #cca158; /* Gold border */
+    background: #ffffff;
+    padding: 4px; /* Gap between image and gold border */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    z-index: 2;
+}
+
+.process-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Number Badge */
+.process-badge {
+    position: absolute;
+    bottom: -15px; /* Sits on the bottom edge of the image circle */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px; 
+    height: 30px;
+    background: #cca158; /* Gold background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    z-index: 3;
+    border: 2px solid #ffffff; /* White border to separate from image */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.process-card-content {
+    text-align: center;
+}
+
+/* Typography */
+.process-title-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: #4a1c11;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.process-desc-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 150px;
+}
+
+/* Footer Banner */
+.process-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.process-footer-banner {
+    flex: 1;
+    background: #fdfaf3;
+    border: 1px solid rgba(204, 161, 88, 0.4);
+    border-radius: 10px;
+    padding: 15px 30px 15px 50px; /* space for overlapping cap */
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ornate corners for the banner */
+.process-footer-banner::before,
+.process-footer-banner::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px; height: 60px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 Q20,20 50,0 Q80,20 100,50 Q80,80 50,100 Q20,80 0,50" fill="none" stroke="%23cca158" stroke-width="2"/></svg>') no-repeat center;
+    background-size: contain;
+    opacity: 0.3;
+}
+.process-footer-banner::before { left: -30px; }
+.process-footer-banner::after { right: -30px; }
+
+.process-cap {
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px; height: 70px;
+    background: #4a1c11;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.15);
+    z-index: 2;
+}
+.process-cap svg {
+    width: 35px; height: 35px;
+    fill: none; stroke: #cca158; stroke-width: 1.5;
+}
+
+.process-footer-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .process-title { font-size: 3rem; }
+    .process-icon-wrapper { width: 100px; height: 100px; }
+    .process-bubble svg { width: 45px; height: 45px; }
+    .process-badge { bottom: -10px; width: 28px; height: 28px; font-size: 0.8rem; }
+    .process-arrow { margin-top: 45px; }
+}
+
+@media (max-width: 992px) {
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    .process-arrow { display: none; } /* Hide arrows on grid */
+    .process-step { margin-bottom: 20px; }
+    .process-footer-banner::before,
+    .process-footer-banner::after { display: none; }
+}
+
+@media (max-width: 767px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .process-footer-banner {
+        padding: 60px 20px 20px 20px;
+        flex-direction: column;
+    }
+    .process-cap {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+    .process-footer-text {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-title { font-size: 2.5rem; }
+    .process-icon-wrapper { width: 80px; height: 80px; }
+    .process-bubble svg { width: 35px; height: 35px; }
+}

@@ -1,0 +1,414 @@
+/* Temples Section Stylesheet */
+
+.temples-section {
+    width: 100%;
+    margin: 0;
+    padding: 30px 5% 20px; /* Reduced top padding to close gap */
+    background-color: #ffffff; /* Alternating white background */
+    position: relative;
+    font-family: 'Inter', sans-serif;
+}
+
+.temples-header {
+    text-align: center;
+    margin: 0 auto 50px;
+    max-width: 1300px;
+}
+
+.temples-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #c97116;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.temples-subtitle .line {
+    width: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #dfb873, transparent);
+}
+
+.temples-subtitle .ornament {
+    font-size: 10px;
+    color: #dfb873;
+}
+
+.temples-title {
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #3b0609;
+    margin: 0 0 15px;
+    text-transform: none; /* Changed from uppercase to match screenshot */
+    letter-spacing: 1px;
+}
+
+.temples-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.temples-divider .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(223,184,115,0), rgba(223,184,115,0.8), rgba(223,184,115,0));
+}
+
+.temples-divider .ornament {
+    color: #c97116;
+    font-size: 14px;
+}
+
+.temples-description {
+    font-size: 13px;
+    color: #5c4a42;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+/* Grid Layout */
+.temples-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1300px;
+    margin: 0 auto 50px;
+}
+
+/* Cards */
+.temple-card {
+    background: #ffffff;
+    border: 1px solid rgba(223, 184, 115, 0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.temple-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(223, 184, 115, 0.15);
+    border-color: rgba(223, 184, 115, 0.7);
+}
+
+/* Number Badge */
+.card-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    border: 1.5px solid rgba(223, 184, 115, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #c97116;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Wrapper */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #e5dcd3;
+}
+
+.temple-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+}
+
+.temple-card:hover .temple-image {
+    transform: scale(1.08);
+}
+
+/* Vel Badge overlay */
+.vel-badge {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border: 1px solid rgba(223, 184, 115, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.temple-card:hover .vel-badge {
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Ensure the SVG inside the badge uses the right colors and is fully visible */
+.vel-badge svg {
+    width: 24px !important;
+    height: 24px !important;
+    flex-shrink: 0;
+    display: block;
+}
+.vel-badge svg path:first-child {
+    fill: #dfb873;
+    stroke: none;
+}
+.vel-badge svg path:nth-child(2) {
+    stroke: #dfb873;
+}
+.vel-badge svg circle {
+    fill: #ffffff;
+    stroke: #dfb873;
+}
+
+/* Card Body */
+.card-body {
+    padding: 35px 20px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #fffdf9; /* Match screenshot cream card body */
+}
+
+.temple-name {
+    font-family: 'Cinzel', serif;
+    font-size: 17px; /* Reduced from 19px to prevent awkward wrapping */
+    font-weight: 700;
+    color: #4a3831;
+    margin: 0 0 6px;
+    line-height: 1.3;
+}
+
+.temple-location {
+    font-size: 11px;
+    color: #c97116;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.temple-location i {
+    font-size: 11px;
+}
+
+/* Divider below location */
+.temple-location::after {
+    content: '❖';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    color: #dfb873;
+    background: #fffdf9;
+    padding: 0 4px;
+    z-index: 2;
+}
+
+.temple-location::before {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #dfb873, transparent);
+    z-index: 1;
+}
+
+.temple-brief {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #2a150e; /* Darker for better readability */
+    margin: 0 0 16px;
+    flex-grow: 1;
+    padding: 0 10px;
+}
+
+/* Read More Button styling */
+.read-more-btn {
+    background: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #c97116;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0 auto;
+    padding: 6px 12px;
+    transition: color 0.2s ease;
+}
+
+.read-more-btn:hover {
+    color: #4a3831;
+}
+
+.read-more-btn i {
+    font-size: 9px;
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn.active i {
+    transform: rotate(180deg);
+}
+
+/* Detailed expanded box */
+.temple-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, padding 0.4s ease;
+    opacity: 0;
+    background: #fffdf9;
+    border-radius: 8px;
+    position: relative;
+    border: 0px solid rgba(223, 184, 115, 0);
+}
+
+.temple-details.expanded {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 15px;
+    padding: 20px 15px;
+    border: 1px solid rgba(223, 184, 115, 0.3);
+}
+
+/* Ornate corners for the details box */
+.temple-details::before,
+.temple-details::after {
+    content: '❖';
+    position: absolute;
+    font-size: 14px;
+    color: #dfb873;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.temple-details::before {
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fffdf9;
+    padding: 0 5px;
+}
+
+.temple-details::after {
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fffdf9;
+    padding: 0 5px;
+}
+
+.temple-details.expanded::before,
+.temple-details.expanded::after {
+    opacity: 1;
+}
+
+.details-content {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #2a150e; /* Darker for better readability */
+    text-align: center;
+}
+
+
+
+/* Animations */
+@keyframes gentlePulse {
+    0% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(223, 184, 115, 0.3)); }
+    50% { transform: scale(1.05); filter: drop-shadow(0 0 6px rgba(223, 184, 115, 0.6)); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(223, 184, 115, 0.3)); }
+}
+
+/* Responsive Styles */
+@media (max-width: 990px) { /* Changed from 1100px so 1024px laptops keep 4 columns */
+    .temples-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .temples-section {
+        padding: 40px 20px;
+    }
+    
+    .temples-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 580px) {
+    .temples-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px; 
+    }
+    .temple-card {
+        max-width: 340px; /* Prevents card from stretching too wide on mobile */
+        margin: 0 auto; /* Centers the card */
+    }
+    .temples-description {
+        font-size: 15px;
+    }
+    .temple-name {
+        font-size: 20px;
+    }
+    .temple-location, .temple-location i {
+        font-size: 13px;
+    }
+    .temple-brief {
+        font-size: 14.5px;
+    }
+    .details-content {
+        font-size: 14.5px;
+    }
+    .read-more-btn {
+        font-size: 14px;
+    }
+}
+
+/* Tablet & Laptop Adjustments */
+@media (min-width: 601px) {
+    .temples-description {
+        font-size: 14px;
+    }
+}

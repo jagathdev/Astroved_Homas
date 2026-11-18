@@ -1,0 +1,748 @@
+/* reviews.css - Reviews & Ratings Section */
+
+.reviews-section {
+    padding: 30px 20px 20px 20px;
+    background: #ffffff;
+    /* White background to contrast with packages */
+    position: relative;
+    overflow: hidden;
+}
+
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ================================= */
+/* Header Styles                     */
+/* ================================= */
+.reviews-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.reviews-subtitle-top {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #a67c00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 700;
+}
+
+/* Side stars for subtitle */
+.reviews-subtitle-top::before,
+.reviews-subtitle-top::after {
+    content: '✦';
+    font-size: 1.2rem;
+    color: #cca158;
+}
+
+.reviews-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: #5d1c1c;
+    /* Burgundy */
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.reviews-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cca158;
+    margin-bottom: 15px;
+}
+
+.reviews-ornament svg {
+    width: 60px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+}
+
+.reviews-subtitle-bottom {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0;
+}
+
+/* ================================= */
+/* Carousel & Testimonial Cards      */
+/* ================================= */
+.reviews-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Navigation Arrows */
+.carousel-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #cca158;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5d1c1c;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: #5d1c1c;
+    color: #fff;
+    border-color: #5d1c1c;
+}
+
+/* Card Grid / Carousel Container */
+.reviews-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 20px;
+    /* space for box-shadow on hover */
+    scroll-behavior: smooth;
+    /* Hide scrollbar for cleaner look */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.reviews-grid::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+/* Individual Card */
+.review-card {
+    box-sizing: border-box;
+    /* Fixes padding breaking the width calculation */
+    flex: 0 0 calc((100% - 40px) / 3);
+    /* 3 items per view (2 gaps of 20px = 40px) */
+    scroll-snap-align: start;
+    background: #ffffff;
+    border-radius: 15px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 45px 20px 20px 20px;
+    /* Space for top icon */
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Floating Quote Icon */
+.review-quote-icon {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    line-height: 1;
+    z-index: 2;
+    border: 4px solid #fdfaf3;
+    /* match background to look cut out */
+}
+
+/* Reviewer Info */
+.reviewer-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.reviewer-loc {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.reviewer-loc svg {
+    width: 12px;
+    height: 12px;
+}
+
+/* Stars */
+.review-stars {
+    color: #d4af37;
+    /* Gold */
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+/* Center Diamond Divider */
+.review-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.review-divider::before,
+.review-divider::after {
+    content: '';
+    width: 25px;
+    height: 1px;
+}
+
+.review-divider-diamond {
+    width: 6px;
+    height: 6px;
+    transform: rotate(45deg);
+}
+
+/* Text */
+.review-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+/* Bottom Ornament */
+.review-bottom-ornament {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.review-bottom-ornament svg {
+    width: 60px;
+    height: 12px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+}
+
+/* Dots */
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background: #5d1c1c;
+}
+
+/* ================================= */
+/* COLOR THEMES                      */
+/* ================================= */
+
+/* Burgundy */
+.rev-theme-red {
+    border: 1px solid rgba(139, 26, 26, 0.2);
+}
+
+.rev-theme-red .review-quote-icon {
+    background: #681717;
+}
+
+.rev-theme-red .reviewer-name {
+    color: #681717;
+}
+
+.rev-theme-red .reviewer-loc svg {
+    color: #681717;
+}
+
+.rev-theme-red .review-divider::before,
+.rev-theme-red .review-divider::after {
+    background: #681717;
+    opacity: 0.3;
+}
+
+.rev-theme-red .review-divider-diamond {
+    background: #681717;
+}
+
+.rev-theme-red .review-bottom-ornament {
+    color: #681717;
+}
+
+/* Mustard */
+.rev-theme-gold {
+    border: 1px solid rgba(179, 130, 27, 0.2);
+}
+
+.rev-theme-gold .review-quote-icon {
+    background: #b3821b;
+}
+
+.rev-theme-gold .reviewer-name {
+    color: #b3821b;
+}
+
+.rev-theme-gold .reviewer-loc svg {
+    color: #b3821b;
+}
+
+.rev-theme-gold .review-divider::before,
+.rev-theme-gold .review-divider::after {
+    background: #b3821b;
+    opacity: 0.3;
+}
+
+.rev-theme-gold .review-divider-diamond {
+    background: #b3821b;
+}
+
+.rev-theme-gold .review-bottom-ornament {
+    color: #b3821b;
+}
+
+/* Plum */
+.rev-theme-plum {
+    border: 1px solid rgba(130, 48, 90, 0.2);
+}
+
+.rev-theme-plum .review-quote-icon {
+    background: #782150;
+}
+
+.rev-theme-plum .reviewer-name {
+    color: #782150;
+}
+
+.rev-theme-plum .reviewer-loc svg {
+    color: #782150;
+}
+
+.rev-theme-plum .review-divider::before,
+.rev-theme-plum .review-divider::after {
+    background: #782150;
+    opacity: 0.3;
+}
+
+.rev-theme-plum .review-divider-diamond {
+    background: #782150;
+}
+
+.rev-theme-plum .review-bottom-ornament {
+    color: #782150;
+}
+
+/* Green */
+.rev-theme-green {
+    border: 1px solid rgba(37, 84, 43, 0.2);
+}
+
+.rev-theme-green .review-quote-icon {
+    background: #25542b;
+}
+
+.rev-theme-green .reviewer-name {
+    color: #25542b;
+}
+
+.rev-theme-green .reviewer-loc svg {
+    color: #25542b;
+}
+
+.rev-theme-green .review-divider::before,
+.rev-theme-green .review-divider::after {
+    background: #25542b;
+    opacity: 0.3;
+}
+
+.rev-theme-green .review-divider-diamond {
+    background: #25542b;
+}
+
+.rev-theme-green .review-bottom-ornament {
+    color: #25542b;
+}
+
+
+/* ================================= */
+/* Stats Banner                      */
+/* ================================= */
+.stats-banner {
+    background: #ffffff;
+    border: 1px solid rgba(204, 161, 88, 0.4);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Dividers between stats */
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: #eee;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.stat-item:hover .stat-icon {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+/* Stat Themes */
+.stat-red {
+    background: #5d1c1c;
+}
+
+/* Should be scalloped in HTML */
+.stat-gold {
+    background: #b3821b;
+    border: 2px dashed #b3821b;
+    background: transparent;
+    color: #b3821b;
+}
+
+.stat-plum {
+    background: #782150;
+}
+
+.stat-green {
+    background: #25542b;
+    border: 2px dotted #25542b;
+    background: transparent;
+    color: #25542b;
+}
+
+.stat-green svg {
+    fill: currentColor;
+    stroke: none;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #5d1c1c;
+    /* All burgundy values */
+    line-height: 1.1;
+    margin-bottom: 3px;
+}
+
+.stat-desc {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.2;
+}
+
+.stat-sub {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    color: #777;
+    margin-top: 2px;
+}
+
+/* ================================= */
+/* CTA Banner                        */
+/* ================================= */
+.cta-banner {
+    background: #ffffff;
+    border-radius: 40px;
+    border: 1px solid rgba(204, 161, 88, 0.3);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cta-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+.cta-left svg {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: #cca158;
+    stroke-width: 1.5;
+}
+
+.cta-left-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    border-left: 1px solid #ddd;
+    padding-left: 15px;
+}
+
+.cta-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cta-btn {
+    background: #5d1c1c;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    animation: pulseGlow 2s infinite;
+}
+
+.cta-btn:hover {
+    background: #4a1616;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(93, 28, 28, 0.3);
+    animation: none;
+}
+
+.cta-star {
+    color: #cca158;
+}
+
+.cta-star svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+}
+
+/* CTA Button Animation */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(93, 28, 28, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(93, 28, 28, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(93, 28, 28, 0);
+    }
+}
+
+/* ================================= */
+/* Responsive                        */
+/* ================================= */
+@media (max-width: 1024px) {
+    .review-card {
+        flex: 0 0 calc((100% - 20px) / 2);
+        /* 2 items per view on tablet */
+    }
+
+    .stats-banner {
+        padding: 20px 10px;
+        gap: 5px;
+    }
+
+    .stat-item {
+        gap: 8px;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .stat-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .stat-value {
+        font-size: 1.3rem;
+    }
+
+    .stat-desc {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-title {
+        font-size: 2.2rem;
+    }
+    
+    .reviews-subtitle-top {
+        font-size: 0.9rem;
+    }
+
+    .cta-banner {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .cta-left {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .cta-left-text {
+        border-left: none;
+        border-top: 1px solid #ddd;
+        padding-left: 0;
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-banner {
+        flex-wrap: wrap;
+    }
+    
+    .reviews-carousel-wrapper {
+        position: relative;
+        display: block; /* Remove flex to let grid take full width */
+    }
+    
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        width: 32px;
+        height: 32px;
+    }
+    
+    .carousel-btn.prev-btn {
+        left: -10px;
+    }
+    
+    .carousel-btn.next-btn {
+        right: -10px;
+    }
+    
+    .reviews-grid {
+        width: 100%;
+    }
+
+    .review-card {
+        flex: 0 0 100%;
+        /* 1 item per view on mobile */
+    }
+
+    .stat-item {
+        flex: 0 0 calc(50% - 10px);
+        /* 2 items per row on mobile */
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .stat-item::after {
+        display: none;
+    }
+}

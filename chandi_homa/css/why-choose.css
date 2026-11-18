@@ -1,0 +1,221 @@
+/* why-choose.css - Why Choose Astroved Section */
+
+.why-choose-section {
+    padding: 50px 20px 20px 20px;
+    background: #fdfaf6; /* Very faint warm cream */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative background elements */
+.why-choose-section::before {
+    content: '';
+    position: absolute;
+    left: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C60 40 90 40 100 50 C90 60 60 60 50 100 C40 60 10 60 0 50 C10 40 40 40 50 0 Z" fill="none" stroke="%23cca158" stroke-width="1" opacity="0.15"/></svg>') no-repeat center;
+    background-size: contain;
+    z-index: 1;
+}
+
+.why-choose-section::after {
+    content: '';
+    position: absolute;
+    right: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C60 40 90 40 100 50 C90 60 60 60 50 100 C40 60 10 60 0 50 C10 40 40 40 50 0 Z" fill="none" stroke="%23cca158" stroke-width="1" opacity="0.15"/></svg>') no-repeat center;
+    background-size: contain;
+    z-index: 1;
+}
+
+.why-choose-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header */
+.why-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.why-over-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #b3821b; /* Dark gold */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.why-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    color: #5d1c1c; /* Burgundy/Dark Red */
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    line-height: 1.1;
+}
+
+.why-ornament {
+    color: #cca158;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+.why-ornament svg {
+    width: 150px;
+    height: 18px;
+}
+
+.why-subtitle {
+    font-family: 'Inter', sans-serif;
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Grid */
+.why-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 40px;
+}
+
+.why-item {
+    flex: 1;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Vertical dividers */
+.why-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: rgba(204, 161, 88, 0.2);
+}
+
+.why-circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #fdfaf6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #cca158;
+    box-shadow: 0 4px 15px rgba(204, 161, 88, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-item:hover .why-circle {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(204, 161, 88, 0.25);
+}
+
+.why-circle svg {
+    width: 30px;
+    height: 30px;
+    stroke-width: 1.5;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.why-item-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: #5d1c1c; /* Burgundy/Dark Red */
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.why-item-desc {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0 5px;
+}
+
+.why-bottom-line {
+    width: 30px;
+    height: 2px;
+    background: #cca158;
+    margin-top: auto; /* Pushes line to the bottom so they align */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .why-item {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .why-title {
+        font-size: 1.8rem;
+    }
+    .why-over-title {
+        font-size: 0.75rem;
+    }
+    .why-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 40px;
+    }
+    .why-item {
+        box-sizing: border-box;
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 5px;
+    }
+    .why-item::after {
+        display: none !important; /* Remove all dividers on mobile */
+    }
+    .why-choose-section::before,
+    .why-choose-section::after {
+        display: none;
+    }
+    .why-circle {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    .why-circle svg {
+        width: 24px;
+        height: 24px;
+    }
+    .why-item-title {
+        font-size: 0.9rem;
+    }
+    .why-item-desc {
+        font-size: 0.75rem;
+        padding: 0;
+    }
+}
